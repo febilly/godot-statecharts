@@ -102,6 +102,9 @@ func _on_animation_tree_state_pressed():
 func _on_animation_player_state_pressed():
 	_create_node(AnimationPlayerState, "AnimationPlayerState")
 
+func _on_animated_sprite_2d_state_pressed():
+	_create_node(AnimatedSprite2DState, "AnimatedSprite2DState")
+
 
 func _on_toggle_sidebar_button_pressed():
 	sidebar_toggle_requested.emit()

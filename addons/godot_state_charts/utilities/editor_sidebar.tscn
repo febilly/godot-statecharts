@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bephgxrkhh3e2"]
+[gd_scene load_steps=11 format=3 uid="uid://bephgxrkhh3e2"]
 
 [ext_resource type="Script" path="res://addons/godot_state_charts/utilities/editor_sidebar.gd" id="1_7kcy8"]
 [ext_resource type="Texture2D" uid="uid://c4ojtah20jtxc" path="res://addons/godot_state_charts/atomic_state.svg" id="2_0k4pg"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://chb8tq62aj2b2" path="res://addons/godot_state_charts/transition.svg" id="6_72e5q"]
 [ext_resource type="Texture2D" uid="uid://b3m20gsesp4i0" path="res://addons/godot_state_charts/animation_player_state.svg" id="8_ci7iy"]
 [ext_resource type="Texture2D" uid="uid://vga3avpb4gyh" path="res://addons/godot_state_charts/toggle_sidebar.svg" id="9_dqcj0"]
+[ext_resource type="Texture2D" uid="uid://bsgvgmseyubtn" path="res://addons/godot_state_charts/animated_sprite_2d_state.svg" id="9_sa335"]
 
 [node name="EditorSidebar" type="MarginContainer"]
 anchors_preset = 15
@@ -108,6 +109,14 @@ tooltip_text = "AnimationPlayerState"
 icon = ExtResource("8_ci7iy")
 icon_alignment = 1
 
+[node name="AnimatedSprite2DState" type="Button" parent="VBoxContainer/AddSection/AddGridContainer" groups=["statebutton"]]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+tooltip_text = "AnimatedSprite2DState"
+icon = ExtResource("9_sa335")
+icon_alignment = 1
+
 [node name="NoOptionsLabel" type="Label" parent="VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 0)
@@ -134,4 +143,5 @@ icon = ExtResource("9_dqcj0")
 [connection signal="pressed" from="VBoxContainer/AddSection/AddGridContainer/Transition" to="." method="_on_transition_pressed"]
 [connection signal="pressed" from="VBoxContainer/AddSection/AddGridContainer/AnimationTreeState" to="." method="_on_animation_tree_state_pressed"]
 [connection signal="pressed" from="VBoxContainer/AddSection/AddGridContainer/AnimationPlayerState" to="." method="_on_animation_player_state_pressed"]
+[connection signal="pressed" from="VBoxContainer/AddSection/AddGridContainer/AnimatedSprite2DState" to="." method="_on_animated_sprite_2d_state_pressed"]
 [connection signal="pressed" from="VBoxContainer/ToggleSidebarButton" to="." method="_on_toggle_sidebar_button_pressed"]
