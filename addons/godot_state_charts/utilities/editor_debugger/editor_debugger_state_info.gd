@@ -8,7 +8,8 @@ enum StateTypes {
 	CompoundState = 2,
 	ParallelState = 3,
 	AnimationPlayerState = 4,
-	AnimationTreeState = 5
+	AnimationTreeState = 5,
+	AnimatedSprite2DState = 6,
 }
 
 ## Create an array from the given state information.
@@ -47,6 +48,8 @@ static func type_for_state(state:StateChartState) -> StateTypes:
 		return StateTypes.AnimationPlayerState
 	elif state is AnimationTreeState:
 		return StateTypes.AnimationTreeState
+	elif state is AnimatedSprite2DState:
+		return StateTypes.AnimatedSprite2DState
 	else:
 		return StateTypes.AtomicState
 
@@ -85,6 +88,8 @@ static func get_state_icon(array:Array) -> Texture2D:
 		return preload("../../animation_player_state.svg")
 	elif type == StateTypes.AnimationTreeState:
 		return preload("../../animation_tree_state.svg")
+	elif type == StateTypes.AnimatedSprite2DState:
+		return preload("../../animated_sprite_2d_state.svg")
 	else:
 		return null
 
